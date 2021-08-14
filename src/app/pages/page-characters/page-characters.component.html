@@ -1,0 +1,12 @@
+<section class="container p-4">
+  <ul class="list-group">
+    <li
+      *ngFor="let character of characters"
+      class="list-group-item"
+      (click)="openCharacter(character.id)"
+    >
+      {{ character.id }} -
+      {{ character.name }}
+    </li>
+  </ul>
+</section>

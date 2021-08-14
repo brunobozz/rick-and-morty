@@ -1,9 +1,28 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
+  readonly API_URL: string = environment.apiUrl;
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
+
+  public getInfo(endPoint: string) {
+    return this.http.get(this.API_URL + endPoint);
+  }
+
+  // public postItem(endPoint: string, data: any) {
+  //   return this.http.post(this.API_PREFIX + endPoint, data, {
+  //     headers: this.API_HEADERS,
+  //   });
+  // }
+
+  // public deleteItem(endPoint: string, id: number) {
+  //   return this.http.delete(this.API_PREFIX + endPoint + id, {
+  //     headers: this.API_HEADERS,
+  //   });
+  // }
 }
