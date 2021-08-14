@@ -1,0 +1,31 @@
+<section *ngIf="character.length !== 0" class="container p-4">
+  <img [src]="character.image" />
+  <div class="m-4">
+    <span class="fw-bold">ID: </span>
+    <span>#{{ character.id }}</span>
+  </div>
+  <div class="m-4">
+    <span class="fw-bold">Name: </span>
+    <span>{{ character.name }}</span>
+  </div>
+  <div class="m-4">
+    <span class="fw-bold">Status: </span>
+    <span>{{ character.status }}</span>
+  </div>
+  <div class="m-4">
+    <span class="fw-bold">Species: </span>
+    <span>{{ character.species }}</span>
+  </div>
+  <div class="m-4">
+    <span class="fw-bold">Gender: </span>
+    <span>{{ character.gender }}</span>
+  </div>
+  <div class="m-4">
+    <span class="fw-bold">Origin: </span>
+    <a [href]="character.origin.url">{{ character.origin.name }}</a>
+  </div>
+  <div class="m-4">
+    <span class="fw-bold">Location: </span>
+    <a [href]="character.location.url">{{ character.location.name }}</a>
+  </div>
+</section>
